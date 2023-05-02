@@ -6,11 +6,12 @@ folder_path = "A1.1"
 
 def get_order_nums(name):
     words = name.replace(".pdf", "").split("_")
-    i = 0
     result = ""
-    while i < len(words) and words[i].isnumeric():
-        result += words[i]
-        i += 1
+    for word in words:
+        if word.isnumeric():
+            result += word
+            continue
+        break
     return int(result)
 
 
